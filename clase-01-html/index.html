@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clase 01</title>
+  </head>
+  <body>
+    <h1>Encabezados</h1>
+    <h2>Encabezados</h2>
+    <h3>Encabezados</h3>
+    <h2>Encabezados</h2>
+    <h3>Encabezados</h3>
+    <h4>Encabezados</h4>
+    <h5>Encabezados</h5>
+    <h6>Encabezados</h6>
+
+    <!-- Es un comentario -->
+    // # /**/
+
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tristique,
+      nulla a vehicula fermentum, ante purus scelerisque elit, quis sollicitudin
+      lorem nisi quis libero. Vestibulum semper nibh augue, porta lacinia ipsum
+      molestie tristique. <br />
+      <!-- Esto es un salto de linea. BR significa line BReak -->
+      Sed fermentum porta condimentum. Nulla facilisi. Donec maximus erat eros,
+      vel pretium nunc faucibus sed. Nulla sed augue quam. Vestibulum et
+      consequat sapien. Pellentesque habitant morbi tristique senectus et netus
+      et malesuada fames ac turpis egestas. Morbi euismod in nisl quis mollis.
+      Donec imperdiet leo vitae mi tempor, interdum consequat velit fringilla.
+      In risus mauris, porta ac mollis sed, facilisis in ligula. Sed ac dui
+      vestibulum, fringilla ante vel, tempor dolor. Curabitur venenatis magna
+      nulla, sed sodales risus volutpat consectetur. Suspendisse dignissim
+      semper elit, ac faucibus lectus lobortis sit amet. Maecenas non tortor
+      diam. Proin a tempor dui, nec congue eros.
+    </p>
+
+    <!-- Listas desordenadas / Unordered Lists -->
+    <ul type="square">
+      <!-- List Items -->
+      <li>A</li>
+      <ul type="square">
+        <!-- List Items -->
+        <li>B</li>
+        <li>B</li>
+        <li>B</li>
+        <li>B</li>
+        <li>B</li>
+      </ul>
+      <li>A</li>
+      <li>A</li>
+      <li>A</li>
+    </ul>
+
+    <!-- Listas sordenadas / Ordered Lists -->
+    <ol type="A" start="4">
+      <!-- List Items -->
+      <li>A</li>
+      <li>A</li>
+      <li>A</li>
+      <li>A</li>
+      <li>A</li>
+    </ol>
+
+    <!-- Imagenes-->
+    <!-- Ruta RELATIVA-->
+    <img src="./images/158.png" width="50%" height="200px" />
+
+    <!-- Ruta ABSOLUTA-->
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/6/67/UTN_logo.jpg?utm_source=es.wikipedia.org&utm_campaign=index&utm_content=original"
+      width="50"
+    />
+
+    <!-- ANCLA -->
+    <a href="https://google.com">Texto</a>
+    <a href="clase01.html" target="_blank">Texto</a>
+
+    <iframe src="clase01.html"></iframe>
+
+    <b>Texto</b>
+    <i>Texto</i>
+    <u>Texto</u>
+
+    <!-- Etiquetas semánticas de texto -->
+    <strong>Texto</strong>
+
+    <em>Texto</em>
+
+    <mark>Texto</mark>
+    <cite>Texto</cite>
+    <pre>let algo = 88</pre>
+    <abbr title="ALGO MUY LARGO">Texto</abbr>
+
+    <!-- Etiquetas semánticas de agrupación -->
+
+    <header>
+      <h1>Titulo</h1>
+      <nav>
+        <button>A</button>
+        <button>B</button>
+        <button>C</button>
+      </nav>
+    </header>
+
+    <main>
+      <aside></aside>
+      <section></section>
+      <section></section>
+      <article></article>
+    </main>
+    <footer></footer>
+
+    <!-- No es especial. Por eso se usa en todos lados -->
+    <div></div>
+
+    <!-- FORMULARIOS -->
+    <br />
+    <form>
+      <label for="nombre">Nombre</label>
+      <input type="text" id="nombre" />
+
+      <br />
+      <br />
+      <u>
+        <input type="checkbox" id="terminos" />
+        <label for="terminos">Acepta los terminos</label>
+      </u>
+      <br />
+      <br />
+      <input type="number" placeholder="29313" /> />
+      <input type="date" />
+      <input type="color" />
+      <input type="password" />
+      <input type="email" />
+      <input type="file" />
+
+      <textarea></textarea>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </body>
+</html>
