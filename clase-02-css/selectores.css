@@ -1,0 +1,21 @@
+h1 {
+  /* a todos los de esta etiqueta */
+  background-color: #000;
+}
+
+.texto {
+  /* a los elementos que elijo */
+  background-color: #aaa;
+}
+
+#texto {
+  /* apunta a un solo elemento */
+  background-color: #a00;
+}
+
+/*
+    Nivel de especificidad.
+    ¿Qué tan específico es el selector?
+
+    más específico > más prioridad
+*/

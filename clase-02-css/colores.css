@@ -1,0 +1,29 @@
+.rojo {
+  color: red; /* no se usa porque no siempre está soportado por los navegadores. :/ */
+}
+.verde {
+  /* 0 - 255 */
+  color: rgb(0, 255, 0);
+}
+.azul {
+  /*RGB hexagecimal # dos caracteres para cada color */
+  /*
+    0 1 2 3 4 5 6 7 8 9 A B C D E F -> 
+    00 -> 0
+    A0 -> 160
+    80 -> 128
+    FF -> 256 
+  */
+  color: #0000ff;
+}
+
+.turq {
+  color: #00ffdd;
+}
+
+.transparente {
+  background-color: #000000;
+  color: #ffeedd22;
+  color: rgba(255, 239, 213, 0.13);
+  /* color: #ff0000; */
+}

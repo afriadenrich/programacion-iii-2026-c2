@@ -1,0 +1,45 @@
+.titulo {
+  font-size: 64px;
+}
+.subtitulo {
+  font-size: 32px;
+}
+.texto {
+  font-size: 16px;
+}
+/* 
+.contenedor {
+  font-size: 30px;
+} */
+
+.titulo-em {
+  font-size: 4em; /* multiplicar por n el tamaño del texto del elemento padre (el elemento jerárquico más próximo que defina un valor en pixeles)*/
+  /* 64px */
+}
+.subtitulo-em {
+  font-size: 2em;
+  /* 32px */
+}
+.texto-em {
+  font-size: 1em;
+  /* 16px */
+}
+
+html {
+  font-size: 8px;
+}
+
+.titulo-rem {
+  font-size: 4rem; /* multiplicar por n el tamaño del texto del elemento ROOT (<html></html>) */
+  /* 64px */
+}
+
+.subtitulo-rem {
+  font-size: 2rem;
+  /* 32px */
+}
+
+.texto-rem {
+  font-size: 1rem;
+  /* 16px */
+}

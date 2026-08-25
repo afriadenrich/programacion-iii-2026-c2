@@ -1,0 +1,61 @@
+/*
+
+selector {
+    propiedad: valor;
+    propiedad: valor valor valor;
+    propiedad: valor funcion();
+    propiedad: funcion();
+}
+    
+*/
+h1 {
+  color: red;
+  background-color: black;
+  height: 60px;
+  text-align: center;
+  /* border: green solid calc(1cm + 30px); */
+  /* border: solid green calc(1cm + 30px); */
+}
+
+/* Tipos de selectores:
+    - de etiqueta (h1, h2, p, img, etc) -> general
+    - de clase (class="fondo-rojo") -> me deja elegir algunos
+    - de id -> ÚNICO.
+*/
+
+/* esto crea una etiqueta que no sirve para nada*/
+fondo-rojo {
+  background-color: red;
+}
+
+/* clase (ahora si) -> . fondo-rojo */
+.fondo-rojo {
+  background-color: red;
+}
+
+.agrandar-texto {
+  font-size: 24px;
+}
+
+/* id -> # */
+#titulo {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 64px;
+}
+
+/*
+DEFINICIONES
+
+SELECTOR/SELECTORES: Es lo que indica a qué elemento o elementos apuntan las propiedades de CSS que llaman. 
+
+PROPIEDADES: ¿Qué modifica? colores, tamaños, posiciones, animaciones, direcciones, fondos, etc.
+*/
+
+/*
+  Unidades de medida
+
+  - pixeles -> px -> tamaño fijo en pixeles
+  - porcentajes -> % -> tamaño en porcentaje al elemento / contenedor padre.
+  em / rem -> para tipografías -> ver textos.html y textos.css
+
+*/

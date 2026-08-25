@@ -1,0 +1,19 @@
+h1 {
+  font-family: "Arial", sans-serif;
+  font-style: italic;
+  font-weight: 100;
+  text-align: center;
+  text-decoration: line-through double;
+  opacity: 0.9;
+}
+
+body {
+  background-image: url("./windows-7-background-imfecqv6cnsicbx4.jpg");
+  background-position: 100px -400px;
+  background-position: right;
+  background-repeat: repeat-y;
+}
+
+html {
+  cursor: pointer;
+}
