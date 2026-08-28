@@ -1,0 +1,85 @@
+/* Configuración de tamaños y márgenes*/
+* {
+  /* GLOBAL. Aplica a TODO*/
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* -> apunta al elemento raíz, es decir, html */
+  /* height: 100%;
+  width: 100%; */
+  /* device virtual heigth */
+  /* device virtual width */
+  height: 100dvh;
+  width: 100dvw;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Configuración de grilla*/
+
+#grilla,
+body {
+  /* Formato grilla*/
+  display: grid;
+
+  /* ¿Cuáles / Cúantas son sus columnas? 3*/
+  grid-template-columns: 150px 300px 200px; /* 3 tamaños fijos no se adaptan. */
+  grid-template-columns: 150px auto 200px; /* 2 tamaños fijos no se adaptan. PERO el automático rellena el espacio sobrante  */
+  /* grid-template-columns: 1fr 1fr 1fr; */
+  /* ¿Cuáles / Cuántas son sus filas? 3*/
+  /* grid-template-rows: 1fr 1fr 1fr; 1/3 1/3 1/3 */
+  /* grid-template-rows: 33.3% 33.3% 33.3%; 1/3 1/3 1/3 */
+  grid-template-columns: 2fr 5fr 3fr;
+  /*grid-template-columns: 20% 50% 30%; */
+  /* grid-template-columns: 20% auto minmax(200px, 400px); */
+  /* grid-template-columns: 200px auto 300px; */
+
+  grid-template-rows: 100px 70px auto;
+}
+
+body > * {
+  padding: 20px;
+}
+
+#header, /* que aplique a header Y a ruta*/
+#ruta {
+  grid-column: 1 / 3;
+}
+
+#header {
+  background-color: #f00;
+  grid-row: 1;
+  /* 'que la celda ocupe desde la linea de columna 1 a la 3' */
+  grid-column: 1 / 3;
+}
+
+#busqueda {
+  background-color: #0f0;
+}
+
+#ruta {
+  background-color: #00f;
+  grid-column: 1 / 3;
+}
+
+#config {
+  background-color: #ff0;
+}
+
+#nav {
+  background-color: #0ff;
+}
+
+#main {
+  background-color: #f0f;
+}
+
+#article {
+  background-color: #aaa;
+}

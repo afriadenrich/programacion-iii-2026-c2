@@ -39,7 +39,15 @@ Por definir - Última instancia para aprobarr la materia (máximo 4).
 ## Clase 02 - CSS - 24/08/2026
 
 ### Formularios - CSS
+
 - [CSS Básico](https://developer.mozilla.org/es/docs/Learn_web_development/Getting_started/Your_first_website/Styling_the_content)
 - [Selectores](https://developer.mozilla.org/es/docs/Learn_web_development/Core/Styling_basics/Basic_selectors)
 - [Box Model](https://www.w3schools.com/css/css_boxmodel.asp)
 
+## Clase 03 - CSS - 28/08/2026
+
+### Grid - Flexbox
+
+- [Formato Grid](https://developer.mozilla.org/es/docs/Web/CSS/CSS_grid_layout)
+- [Guía de Grid](https://developer.mozilla.org/es/docs/Web/CSS/CSS_grid_layout/Basic_concepts_of_grid_layout)
+- [Formato flex](https://developer.mozilla.org/es/docs/Learn_web_development/Core/CSS_layout/Flexbox)
