@@ -51,3 +51,6 @@ Por definir - Última instancia para aprobarr la materia (máximo 4).
 - [Formato Grid](https://developer.mozilla.org/es/docs/Web/CSS/CSS_grid_layout)
 - [Guía de Grid](https://developer.mozilla.org/es/docs/Web/CSS/CSS_grid_layout/Basic_concepts_of_grid_layout)
 - [Formato flex](https://developer.mozilla.org/es/docs/Learn_web_development/Core/CSS_layout/Flexbox)
+
+### Extras
+- [Ejemplos flex](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
