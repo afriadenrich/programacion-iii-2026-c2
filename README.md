@@ -54,3 +54,12 @@ Por definir - Última instancia para aprobarr la materia (máximo 4).
 
 ### Extras
 - [Ejemplos flex](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+
+
+## Clase 04 - CSS - 31/08/2026
+
+### Media Queries - PseudoClases - Selectores de atributo
+
+- [Selectores de atributo](https://developer.mozilla.org/es/docs/Learn_web_development/Core/Styling_basics/Attribute_selectors)
+- [PseudoClases](https://developer.mozilla.org/es/docs/Web/CSS/Pseudo-classes)
+- [Media Queries](https://developer.mozilla.org/es/docs/Learn_web_development/Core/CSS_layout/Media_queries)

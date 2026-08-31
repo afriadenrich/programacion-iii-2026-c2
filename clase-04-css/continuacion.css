@@ -1,0 +1,28 @@
+/* Pseudoselectores */
+main > div:nth-child(2n + 1) {
+  background-color: #0f0;
+}
+
+main > div:first-child {
+  background-color: #f00;
+}
+main > div:last-child {
+  background-color: #f00;
+}
+
+main > p:nth-last-of-type(1) {
+  background-color: #000;
+  color: #fff;
+}
+
+/* nth 
+4th
+5th
+6th
+
+*/
+
+/* pseudoelementos */
+main::after {
+  content: "hola mundo";
+}

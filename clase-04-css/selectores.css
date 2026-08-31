@@ -1,0 +1,94 @@
+* {
+}
+
+:root {
+}
+
+body {
+}
+
+body > div {
+}
+
+body div {
+}
+
+div {
+  margin: 20px;
+}
+
+.clases {
+}
+
+#ids {
+}
+
+/* Selectores a elementos con distintas PROPIEDADES */
+/* Coincidencia exacta de valor */
+input[type="number"] {
+  border: none;
+  border-bottom: solid #000 1px;
+}
+
+div.b {
+  background-color: #bbb;
+}
+
+/* Que contiene */
+div[class~="d"] {
+  background-color: #fbb;
+}
+
+/* Que sea el valor es o es- */
+*[lang|="es"] {
+  background-color: aqua;
+}
+
+/* FORMULARIOS -> validaciones y envío de datos */
+
+/* Pseudoclases y pseudoselectores */
+/* Tienen condiciones, normalmente dictadas por su nombre */
+input:invalid {
+  color: #f00;
+  border: #f00 solid 1px;
+}
+
+input:hover {
+  background-color: #aaa;
+}
+
+input:valid {
+  color: #0a0;
+  border: #0a0 solid 1px;
+}
+
+input:focus {
+  color: rgb(195, 195, 255);
+  border: rgb(195, 195, 255) solid 1px;
+  outline: none;
+}
+
+form > button {
+  cursor: pointer;
+}
+
+form:invalid > button {
+  cursor: not-allowed;
+}
+
+/* No deja cambiar estos dos cuando es autocompletado*/
+input:-webkit-autofill {
+  -webkit-text-fill-color: #0a0;
+  box-shadow: inset 0 0 0 32px #f00;
+}
+
+input:autofill {
+  outline: 5px solid magenta;
+  border: 3px dashed yellow;
+}
+
+form:valid > button:not(:hover) {
+  color: #f00;
+}
+
+/* Pseudoselectores */

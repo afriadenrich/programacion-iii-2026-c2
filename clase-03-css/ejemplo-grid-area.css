@@ -1,0 +1,52 @@
+:root {
+  height: 100dvh;
+  width: 100dvw;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+
+  display: grid;
+
+  grid-template-areas:
+    "A A A B"
+    "C C D B"
+    "E E D F"
+    "G H H I";
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+body > div {
+  border: 1px solid #000;
+}
+
+#A {
+  grid-area: A;
+  background-color: green;
+}
+#B {
+  grid-area: B;
+}
+#C {
+  grid-area: C;
+}
+#D {
+  grid-area: D;
+}
+#E {
+  grid-area: E;
+}
+#F {
+  grid-area: F;
+}
+#G {
+  grid-area: G;
+}
+#H {
+  grid-area: H;
+}
+#I {
+  grid-area: I;
+}
