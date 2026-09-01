@@ -1,0 +1,97 @@
+/* FORMATO PC primero en este ejemplo. TODO lo que supere los pixeles de tamaño de PC siguen estas reglas */
+/* 1200px o más pc horizontal*/
+
+* {
+  margin: 0;
+}
+
+:root {
+  height: 100dvh;
+  width: 100dvw;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: 200px auto 200px;
+  grid-template-rows: 60px auto;
+}
+
+header {
+  grid-column: 1 / 4;
+  background-color: #000;
+  color: #fff;
+}
+
+nav {
+  background-color: #333;
+  color: #fff;
+}
+
+aside {
+  background-color: #005e5e;
+  color: #fff;
+}
+
+/* BREAKPOINTS */
+/* 1000px o más notebook horizontal*/
+/* @media (max-width: 1000px) {
+  main {
+    background-color: #00ffff;
+  }
+} */
+
+/* 768px o más tablet vertical*/
+@media (max-width: 768px) {
+  body {
+    grid-template-rows: 60px 60px auto; /* Cambio 1 */
+    grid-template-columns: auto 200px; /* Cambio 3*/
+  }
+
+  nav {
+    grid-column: 1 / 3; /* Cambio 2 */
+  }
+
+  header {
+    grid-column: 1 / 3; /* Cambio 4 */
+  }
+}
+
+/* 480px o más mobile vertical*/
+@media (max-width: 480px) {
+  body {
+    grid-template-columns: 100%;
+    grid-template-rows: 80px 80px 160px auto;
+  }
+
+  header,
+  nav,
+  aside,
+  main {
+    grid-column: 1;
+  }
+
+  aside {
+    grid-row: 3;
+  }
+}
+
+/* 320px o más */
+/* @media (max-width: 320px) {
+  * {
+    display: none;
+  }
+
+  body {
+    display: block;
+  }
+
+  body::before {
+    color: #000;
+    content: "Tu teléfono es muy chico, perdón :(";
+  }
+} */
+
+/* HASTA el ancho máximo de 1250px. Se refiere a MENOS de 1250*/

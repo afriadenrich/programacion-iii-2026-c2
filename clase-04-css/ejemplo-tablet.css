@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+}
+
+:root {
+  height: 100dvh;
+  width: 100dvw;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: auto 200px; /* Cambio 3*/
+  grid-template-rows: 60px 60px auto; /* Cambio 1 */
+}
+
+header {
+  grid-column: 1 / 3; /* Cambio 4 */
+  background-color: #000;
+  color: #fff;
+}
+
+nav {
+  grid-column: 1 / 3; /* Cambio 2 */
+  background-color: #333;
+  color: #fff;
+}
+
+aside {
+  background-color: #333;
+  color: #fff;
+}
+
+main {
+  background-color: #faa;
+}
