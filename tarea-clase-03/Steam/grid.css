@@ -1,0 +1,307 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+  width: 100dvw;
+  height: 100dvh;
+  margin: 0px;
+}
+
+body {
+  /*Formato Grilla*/
+  display: grid;
+  /*Cuantas columnas 1*/
+  grid-template-columns: 100%;
+  /*Cuales / cuantas filas 4*/
+  grid-template-rows: 90px 60px auto;
+
+  background-color: #0f1924;
+  color: #ffffff;
+}
+
+header {
+  display: grid;
+  grid-template-columns: 6fr 2fr;
+  background-color: #171d25;
+  /* background-color: red; */
+}
+
+input:focus {
+  outline: none;
+  border: 1px solid #58a7d5;
+}
+
+#barraPrincipal {
+  margin: auto;
+  margin-left: 20px;
+}
+
+.headerLink {
+  color: #b8b6b4;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 5px;
+}
+
+.headerLink:hover {
+  color: #ffffff;
+}
+
+.headerLink::selection .installBtn {
+  border: #a3cf06;
+  background-color: #a3cf06;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.navLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #f0f0f1;
+  text-decoration: none;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 5px;
+}
+
+.navLink:hover {
+  color: #ffffff;
+}
+
+.navLink svg {
+  width: 10px;
+  height: 10px;
+  transition: transform 0.2s ease;
+}
+
+.navLink:hover svg {
+  transform: translateY(2px);
+}
+
+#sesion {
+  background-color: #171d25;
+  margin: auto;
+  /* background-color: yellow; */
+}
+
+.sesionBtn {
+  color: #61666a;
+  text-decoration: none;
+}
+
+.sesionBtn:hover {
+  color: #ffffff;
+}
+
+nav {
+  display: grid;
+  background-color: #182434;
+  /* background-color: rebeccapurple; */
+  grid-template-columns: 2fr 1fr;
+}
+
+#barraNavegacion {
+  background-color: #182434;
+  /* background-color: peru; */
+  padding: 10px;
+  margin: auto;
+  margin-left: 10px;
+}
+
+#barraBusqueda {
+  margin: 10px;
+  background-color: #3a4050;
+  border: #343f4d;
+  color: #c1c2c6;
+  height: 40px;
+  width: 340px;
+}
+
+#lupa {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #ffffff;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+}
+
+#lupa svg {
+  width: 20px;
+  height: 20px;
+}
+
+#destacados {
+  display: grid;
+  background-color: #0f1924;
+  /* background-color: olive; */
+  grid-template-columns: 3fr 1fr;
+  margin: 10px;
+}
+
+#giftCardBoton {
+  display: flex;
+  align-items: center;
+}
+
+#giftCard {
+  height: 40px;
+  position: relative;
+  z-index: 2;
+  margin-right: -24px;
+}
+
+#botonTarjeta {
+  width: 200px;
+  background: linear-gradient(to right, #102e40, #319bda);
+  border: none;
+  color: #ffffff;
+  padding: 10px 10px 10px 20px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+#giftCardBoton {
+  display: flex;
+  height: 35px;
+  width: 249px;
+  align-items: center;
+  border-radius: 0px;
+  transition:
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+#giftCardBoton:hover {
+  box-shadow: 0 0 16px 4px rgba(49, 155, 218, 0.6);
+  transform: translateY(-2px);
+}
+
+#carrusel {
+  margin: 150px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  background-color: #1a2d40;
+}
+
+#carrusel figure {
+  margin: 0;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+#portada {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+#infoJuego {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+#infoJuego ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 20px;
+}
+
+#infoJuego ul img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.precio {
+  margin-top: auto;
+  margin-left: auto;
+  margin-right: 10px;
+  background-color: #121f2c;
+  padding: 4px 7px 4px 7px;
+}
+
+.textoResaltadoAzul {
+  color: #58a7d5;
+}
+
+#rank {
+  display: flex;
+  margin: 10px;
+  gap: 7px;
+}
+
+.textoVerde {
+  color: #a3cf06;
+  font-weight: bold;
+}
+
+footer {
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr 1fr 1fr;
+  margin: 10px;
+  padding: 10px;
+  background-color: #0f1923;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: #a7aeb4;
+}
+
+.redes {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  list-style: none;
+  margin: 10px;
+}
+
+.footOne {
+  /* background-color: aquamarine; */
+}
+
+.footSteam {
+  /* background-color: gray; */
+}
+
+.footValve {
+  /* background-color: beige; */
+}
+
+.footInfo {
+  /* background-color: cyan; */
+}
+
+.footMas {
+  /* background-color: crimson; */
+}
+
+.liStyle {
+  color: #4d565f;
+  margin: 10px;
+}
+
+.liStyle:hover {
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.copy {
+  color: #69737e;
+}

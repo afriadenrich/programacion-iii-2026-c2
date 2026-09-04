@@ -1,0 +1,201 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  height: 100dvh;
+  width: 100dvw;
+  overflow-x: hidden; /* buena opción*/
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header,
+nav,
+footer {
+  display: flex;
+  background-color: #242c50;
+  color: #ffffff;
+}
+
+header {
+  height: 65px;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 3px solid #139ed9;
+}
+
+header > div {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
+nav {
+  height: 45px;
+  justify-content: end;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+}
+
+nav ul li {
+  display: flex;
+  align-items: center;
+  margin: 15px;
+  font-size: 0.8em;
+  font-weight: 600;
+}
+
+div {
+  display: flex;
+  align-items: center;
+}
+
+#principal {
+  height: 350px;
+  background-image: url(https://servicioscf.afip.gob.ar/publico/sitio/contenido/common/image.aspx?i=5694|banner_prorroga.jpg);
+  background-size: cover;
+  display: flex;
+  justify-content: end;
+}
+
+#ingreso {
+  height: 100%;
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #ffffff;
+  gap: 20px;
+}
+
+#ingreso * {
+  height: 40px;
+  color: #ffffff;
+  margin-right: 20px;
+}
+
+.boton {
+  font-weight: 550;
+  font-size: 1em;
+  background-color: transparent;
+  border: none;
+  border-radius: 5px;
+  height: 40px;
+}
+
+.boton-azul {
+  background-color: #139ed9;
+  color: #ffffff;
+}
+
+.boton-transp {
+  border: solid 1px;
+}
+
+.boton-borde-azul {
+  border: solid 1px #242c50;
+  color: #242c50;
+}
+
+#ingresar-con-clave {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#segunda-div {
+  height: 300px;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin-top: 30px;
+}
+
+#novedades {
+  background-color: #efefef;
+  height: 460px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+#novedades h2 {
+  margin-left: 100px;
+  margin-top: 20px;
+}
+
+#area-articulos {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.tarjeta-articulo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-earound;
+  height: 280px;
+  width: 250px;
+  background-color: #ffffff;
+  border-bottom: solid 2px #d1d1d1;
+  border-radius: 8px;
+  font-size: 0.9em;
+  gap: 20px;
+}
+
+.area-imagen-articulo {
+  width: 100%;
+  height: 40%;
+  overflow: hidden;
+}
+
+.area-imagen-articulo img {
+  width: 100%;
+  height: 100%;
+}
+
+.boton-borde-azul {
+  border: solid 1px #1e5768;
+  color: #1e5768;
+  padding: 5px;
+  width: 30%;
+  margin-bottom: 5px;
+}
+
+#novedades .boton-azul {
+  width: 16%;
+  height: 45px;
+  align-self: center;
+}
+
+footer {
+  height: 250px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#logo-arca-footer {
+  width: 140px;
+  height: auto;
+  overflow: hidden;
+}
+
+#logo-arca-footer img {
+  width: 100%;
+  height: 100%;
+}
+
+#iconos-footer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}

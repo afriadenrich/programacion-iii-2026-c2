@@ -1,0 +1,72 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+  height: 100dvh;
+  width: 100dvw;
+}
+
+body {
+  background-color: #0f1924;
+  color: #ffffff;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+
+  background-color: #ce111100;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+#destacados {
+  display: flex;
+  justify-content: space-between;
+}
+
+#carrusel {
+  display: flex;
+  justify-content: center;
+}
+
+#carrusel figure {
+  margin: 10;
+}
+
+#portada {
+  width: 100%;
+}
+
+#infoJuego ul {
+  display: flex;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 20px;
+}
+
+.textoResaltadoAzul {
+  color: #58a7d5;
+}
+
+.textoVerde {
+  color: #a3cf06;
+  font-weight: bold;
+}
+
+#rank {
+  display: flex;
+  margin: 10px;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+  padding: 10px;
+}

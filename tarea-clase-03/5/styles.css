@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+}
+
+header {
+  position: absolute; /* se saca del flujo normal */
+  top: 0;
+  left: 0;
+  width: 100%; /* para que ocupe todo el ancho*/
+  z-index: 10; /*asegura que quede por encima visualmente */
+}
+
+nav{
+  display: flex;
+  background-color: rgba(21, 60, 134, 0.7);
+  justify-content: space-between;
+  padding: 5px;
+}
+
+#menu {
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-evenly;
+}
+
+#redes{
+  display: flex;
+  padding: 0px 2px;
+  justify-content: space-evenly;
+}
+
+.link-menu {
+  font-family:
+  "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+  "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-style: normal;
+  text-decoration: none;
+  color: white;
+  padding: 0px 2px;
+}
+
+.link-redes{
+  display: flex;
+}
+
+.imagen-principal1 {
+  background-image: url("./img/stardewbackground.png");
+  background-size: contain;
+  position: relative; /* marco de referencia para el header */
+}
+
+.imagen {
+  text-align: center;
+}
+
+#parte-dos,
+#parte-tres,
+#parte-cuatro,
+#parte-cinco {
+  background-color: #fae792;
+  text-align: center;
+}
+#titulo {
+  color: #0066cc;
+}
+
+#titulo-section {
+  font-size: 32px;
+  color: #0066cc;
+}
+
+#parte-final {
+  background-color: #ffffcc;
+  text-align: center;
+}
+
+.link-footer {
+  text-decoration: none;
+}

@@ -63,3 +63,12 @@ Por definir - Última instancia para aprobarr la materia (máximo 4).
 - [Selectores de atributo](https://developer.mozilla.org/es/docs/Learn_web_development/Core/Styling_basics/Attribute_selectors)
 - [PseudoClases](https://developer.mozilla.org/es/docs/Web/CSS/Pseudo-classes)
 - [Media Queries](https://developer.mozilla.org/es/docs/Learn_web_development/Core/CSS_layout/Media_queries)
+
+## Clase 05 - JS - 13/04/2026
+
+### Javascript básico
+
+- [Palabras clave y otras expresiones](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators)
+- [Tipos primitivos](https://developer.mozilla.org/es/docs/Glossary/Primitive)
+- [Funciones](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Functions)
+- [Objetos](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Working_with_objects)
