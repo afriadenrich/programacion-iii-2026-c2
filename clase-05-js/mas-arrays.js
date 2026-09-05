@@ -22,15 +22,15 @@ array = array.filter((el) => el.length > 7);
 
 console.log(array);
 
-const numero = 9;
+const numero7 = 9;
 
-// if (numero > 8) return "HOLA";
+// if (numero7 > 8) return "HOLA";
 // else return "CHAU";
 
-console.log(numero > 8 ? "HOLA" : "CHAU");
+console.log(numero7 > 8 ? "HOLA" : "CHAU");
 
-let arrayNumeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+let arrayNumeros2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-arrayNumeros = arrayNumeros.reduce((prev, actual) => prev + actual);
+arrayNumeros2 = arrayNumeros2.reduce((prev, actual) => prev + actual);
 
-console.log(arrayNumeros);
+console.log(arrayNumeros2);

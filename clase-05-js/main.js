@@ -126,3 +126,16 @@ console.log(numero0 == falso); // Que coincida valor
 
 // Qué tipo de dato es?
 console.log(typeof numero0 === "number");
+
+const usr1 = { nombre: "Agus" };
+const usr2 = { nombre: "Agus" };
+const algo = 1;
+const algo2 = 1;
+console.log(usr1 === usr2);
+console.log([1] === [1]);
+console.log(3 == "3");
+console.log(algo === algo2);
+
+console.log(usr1.nombre === usr2.nombre);
+
+console.log(JSON.stringify(usr1) == JSON.stringify(usr2));
