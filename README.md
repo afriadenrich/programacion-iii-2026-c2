@@ -64,7 +64,7 @@ Por definir - Última instancia para aprobarr la materia (máximo 4).
 - [PseudoClases](https://developer.mozilla.org/es/docs/Web/CSS/Pseudo-classes)
 - [Media Queries](https://developer.mozilla.org/es/docs/Learn_web_development/Core/CSS_layout/Media_queries)
 
-## Clase 05 - JS - 13/04/2026
+## Clase 05 - JS - 04/09/2026
 
 ### Javascript básico
 
@@ -72,3 +72,13 @@ Por definir - Última instancia para aprobarr la materia (máximo 4).
 - [Tipos primitivos](https://developer.mozilla.org/es/docs/Glossary/Primitive)
 - [Funciones](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Functions)
 - [Objetos](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Working_with_objects)
+
+## Clase 06 - JS y DOM - 07/09/2026
+
+### Javascript básico
+
+- [DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)
+- [DOM anatomia](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Anatomy_of_the_DOM)
+- [DOM Reflect](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes)
+- [DOM eventos](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Events)
+- [Spread operator](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/Spread_syntax)
