@@ -14,3 +14,20 @@ const boton = document.querySelector("#boton");
 const p = document.querySelector("p");
 
 const main = document.querySelector("main");
+
+// 1. Selectores.
+const body = document.body;
+// const arrayTodosLosP = document.querySelectorAll("p");
+// const arrayTodosLosP = document.getElementsByTagName("p");
+// const arrayTodosLosP = document.getElementsByTagNameNS("p");
+// const arrayTodosLosP = document.getElementsByName("nombre"); // ESTO NO ES. Esto busca el atributo name="nombre"
+// const unParrafo = document.querySelector("p"); // primer parrafo
+/**
+ * @type {HTMLParagraphElement}
+ */
+// const unParrafo = document.getElementById("mundo"); // primer parrafo
+const unParrafo = document.querySelector("p#mundo"); // primer parrafo
+const unParrafoMuyConcreto = document.querySelector("div > p.texto");
+
+console.log({ unParrafo: unParrafo });
+document.quer;

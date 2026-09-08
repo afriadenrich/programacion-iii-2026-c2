@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Form recarga la página cuando se hace click a un botón submit (o no) -->
+    <form>
+      <div>
+        <label for="username">Username</label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          placeholder="acá va tu nombre"
+        />
+        <!-- el valor del atributo name aparece en la url al enviar un etiqueta form -->
+      </div>
+      <div>
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="123456"
+        />
+        <!-- el valor del atributo name aparece en la url al enviar un etiqueta form -->
+      </div>
+      <button id="registrarse" type="submit">Registrarse</button>
+    </form>
+
+    <span></span>
+    <script src="main.js"></script>
+  </body>
+</html>

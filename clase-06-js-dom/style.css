@@ -1,0 +1,17 @@
+button:hover {
+  background-color: aqua;
+  color: #000;
+}
+
+.rojo {
+  color: #0f0;
+}
+
+.bg-rojo {
+  background-color: #f00;
+}
+
+input:valid {
+  color: #000;
+  background-color: #fff0;
+}
