@@ -1,0 +1,33 @@
+#ej1 {
+    width: 200px;
+    height: 200px;
+    padding: 0;
+}
+
+#ej1 > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#ej1 > button {
+    position: relative;
+    top: -50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+#ej2 {
+    background-image: url("./doctor.jpg");
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+}
+
+#ej2 > button {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

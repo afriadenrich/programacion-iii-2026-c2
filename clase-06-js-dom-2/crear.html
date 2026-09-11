@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crear</title>
+    <link rel="stylesheet" href="formularios.css" />
+  </head>
+  <body>
+    <form id="crear">
+      <div>
+        <label for="marca">Marca</label>
+        <input id="marca" minlength="3" maxlength="15" required />
+      </div>
+      <div>
+        <label for="modelo">Modelo</label>
+        <input id="modelo" minlength="3" maxlength="15" required />
+      </div>
+
+      <div>
+        <label for="precio">Precio</label>
+        <input type="number" id="precio" min="1" required />
+      </div>
+
+      <button type="submit" id="crearBtn">Crear</button>
+    </form>
+
+    <script src="auto.js"></script>
+    <script src="crear.js"></script>
+  </body>
+</html>
