@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Listar</title>
+    <link rel="stylesheet" href="formularios.css" />
+  </head>
+  <body>
+    <h1>Clase DOM + localStorage</h1>
+    <nav>
+      <a href="./crear.html">Crear</a>
+      <a href="./editar.html">Editar</a>
+      <a href="./listar.html">Listar</a>
+    </nav>
+    <hr />
+
+    <table border="1" style="border-collapse: collapse">
+      <!-- Encabezado-->
+      <thead>
+        <!-- Fila -> <tr> -> table row -->
+        <tr>
+          <th>Marca</th>
+          <th>Modelo</th>
+          <th>Precio</th>
+        </tr>
+      </thead>
+      <!-- Filas -->
+      <tbody id="lista"></tbody>
+    </table>
+
+    <script src="./auto.js"></script>
+    <script src="./listar.js"></script>
+  </body>
+</html>
