@@ -82,3 +82,21 @@ Por definir - Última instancia para aprobarr la materia (máximo 4).
 - [DOM Reflect](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes)
 - [DOM eventos](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Events)
 - [Spread operator](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/Spread_syntax)
+
+
+## Clase 07 - DOM - LocalStorage - 11/09/2026
+
+### Javascript básico
+
+- [LocalStorage](https://developer.mozilla.org/es/docs/Web/API/Window/localStorage)
+- [Create Element](https://developer.mozilla.org/es/docs/Web/API/Document/createElement)
+- [Insert Element](https://developer.mozilla.org/es/docs/Web/API/Element/insertAdjacentElement)
+
+## Clase 08 - Asincronísmos - 14/09/2026
+
+### Javascript avanzado
+
+- [HTTP](https://developer.mozilla.org/es/docs/Web/HTTP)
+- [Promesas](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+- [Usar Promesas](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Using_promises)
+- [Fetch](https://developer.mozilla.org/es/docs/Web/API/Window/fetch)
