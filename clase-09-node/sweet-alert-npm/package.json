@@ -1,0 +1,9 @@
+{
+  "name": "sweet-alert-npm",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "dependencies": {
+    "sweetalert2": "^11.26.25"
+  }
+}
