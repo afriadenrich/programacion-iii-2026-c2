@@ -1,0 +1,15 @@
+{
+  "name": "toastify-por-npm",
+  "version": "1.0.0",
+  "description": "Clase de la UTN",
+  "license": "ISC",
+  "author": "yo",
+  "type": "commonjs",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "toastify-js": "^1.12.0"
+  }
+}
