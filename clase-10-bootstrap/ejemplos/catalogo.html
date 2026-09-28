@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Productos — Bootstrap 5</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <!-- Lottie: librería para reproducir animaciones exportadas desde After Effects -->
+    <script src="https://cdn.jsdelivr.net/npm/@lottiefiles/lottie-player@2.0.8/dist/lottie-player.js"></script>
+
+    <style>
+      .product-card {
+        cursor: pointer;
+        transition:
+          transform 0.15s,
+          box-shadow 0.15s;
+      }
+      .product-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+      }
+      .product-img {
+        height: 200px;
+        object-fit: cover;
+        width: 100%;
+        display: block;
+        transition: opacity 0.15s;
+      }
+
+      /* Flechas circulares blancas: visibles sobre cualquier imagen */
+      .img-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255, 255, 255, 0.85);
+        border: none;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        color: #000;
+        z-index: 1;
+        padding: 0;
+        line-height: 1;
+      }
+      .img-btn-prev {
+        left: 8px;
+      }
+      .img-btn-next {
+        right: 8px;
+      }
+      .img-btn:hover {
+        background: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ── NAVBAR ─────────────────────────────────────────── -->
+    <nav class="navbar bg-body-tertiary border-bottom px-4">
+      <a href="../index.html" class="btn btn-sm btn-outline-secondary"
+        >← Inicio</a
+      >
+      <span class="navbar-brand ms-3 mb-0">Catálogo de productos</span>
+    </nav>
+
+    <!-- ── LOADING OVERLAY ────────────────────────────────────
+         position-fixed top-0 start-0 w-100 h-100
+           → cubre toda la pantalla por encima del contenido
+         bg-body → respeta dark mode
+         z-index 9999 → por encima de todo, incluso la navbar
+         ──────────────────────────────────────────────────── -->
+    <div
+      id="loading"
+      class="position-fixed top-0 start-0 w-100 h-100 d-flex flex-column align-items-center justify-content-center bg-body"
+      style="z-index: 9999"
+    >
+      <!--
+        LOTTIE: componente <lottie-player>
+          src     → URL del JSON de la animación (descargá cualquiera de lottiefiles.com)
+          loop    → la animación se repite
+          autoplay → arranca sola
+          style   → tamaño de la animación
+
+        Si querés cambiar la animación:
+          1. Entrá a lottiefiles.com
+          2. Buscá "loading" o cualquier animación
+          3. Copiá el link del JSON y reemplazá el src
+      -->
+      <lottie-player
+        id="lottie-anim"
+        src="https://lottie.host/c33ba32d-039a-472c-88ac-b0ea695d08db/i94YsbX2hF.json"
+        background="transparent"
+        speed="1"
+        style="width: 280px; height: 280px"
+        loop
+        autoplay
+      ></lottie-player>
+
+      <!-- Fallback: se muestra si Lottie no carga -->
+      <div id="spinner-fallback" class="d-none">
+        <div
+          class="spinner-border text-primary"
+          style="width: 4rem; height: 4rem"
+          role="status"
+        >
+          <span class="visually-hidden">Cargando...</span>
+        </div>
+      </div>
+
+      <p class="text-body-secondary mt-3 fs-5">Cargando productos...</p>
+    </div>
+
+    <!-- ── GRILLA DE CARDS ───────────────────────────────── -->
+    <div class="container py-4">
+      <div class="row g-4" id="products-grid"></div>
+    </div>
+
+    <!-- ── MODAL ─────────────────────────────────────────────
+         Un solo modal reutilizable. Su contenido se llena
+         desde showModal() cada vez que se hace click en una card.
+         ──────────────────────────────────────────────────── -->
+    <div class="modal fade" id="productModal" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modal-title"></h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body" id="modal-body"></div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cerrar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      // Si Lottie no carga (sin internet, URL rota) mostramos el spinner de Bootstrap
+      document.getElementById("lottie-anim").addEventListener("error", () => {
+        document.getElementById("lottie-anim").style.display = "none";
+        document.getElementById("spinner-fallback").classList.remove("d-none");
+      });
+
+      const productsMap = new Map();
+      const modal = new bootstrap.Modal(
+        document.getElementById("productModal"),
+      );
+
+      // ── FETCH ──────────────────────────────────────────────────────────
+      async function loadProducts() {
+        const res = await fetch("https://dummyjson.com/products?limit=12");
+        const { products } = await res.json();
+
+        products.forEach((p) => productsMap.set(p.id, p));
+        renderGrid(products);
+
+        // Sacamos el overlay una vez que las cards están en el DOM
+        document.getElementById("loading").remove();
+      }
+
+      // ── RENDER ─────────────────────────────────────────────────────────
+      // Cada card tiene:
+      //   • visor de imágenes custom  → una <img> + botones prev/next con fade
+      //   • card h-100                → altura uniforme en toda la fila
+      function renderGrid(products) {
+        const grid = document.getElementById("products-grid");
+
+        grid.innerHTML = products
+          .map((p) => {
+            const imgs = p.images.slice(0, 3);
+            return `
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="card h-100 product-card shadow-sm" data-product-id="${p.id}">
+
+              <!-- Visor de imágenes custom: una sola <img> + dos botones -->
+              <div class="position-relative overflow-hidden">
+                <img class="product-img"
+                     src="${imgs[0]}"
+                     alt="${p.title}"
+                     data-product-id="${p.id}"
+                     onerror="this.src='../img/placeholder.jpg'" />
+                <button type="button" class="img-btn img-btn-prev" data-id="${p.id}">
+                  <i class="bi bi-chevron-left"></i>
+                </button>
+                <button type="button" class="img-btn img-btn-next" data-id="${p.id}">
+                  <i class="bi bi-chevron-right"></i>
+                </button>
+              </div>
+
+              <div class="card-body d-flex flex-column">
+                <span class="badge bg-secondary text-capitalize mb-2" style="width:fit-content">
+                  ${p.category}
+                </span>
+                <h6 class="card-title flex-grow-1">${p.title}</h6>
+                <div class="d-flex justify-content-between align-items-center mt-2">
+                  <span class="fw-bold text-success">$${p.price}</span>
+                  <span class="text-muted small">⭐ ${p.rating}</span>
+                </div>
+              </div>
+
+            </div>
+          </div>`;
+          })
+          .join("");
+
+        // ── VISOR DE IMÁGENES CUSTOM ──────────────────────────────────────
+
+        // ¿Por qué un Map y no un array o variables sueltas?
+        // Tenemos 12 cards simultáneas, cada una con su propio índice de imagen.
+        // Un Map permite guardar pares clave→valor donde la clave es el id del
+        // producto (número único) y el valor es el índice actual (0, 1 o 2).
+        // Así cada card tiene su estado independiente sin mezclar datos.
+        //
+        //   imgIndexes.set(5, 0)  → producto 5 está mostrando imagen 0
+        //   imgIndexes.get(5)     → devuelve 0
+        //   imgIndexes.set(5, 1)  → ahora muestra imagen 1
+        //
+        // Alternativa con objeto plano: { 5: 0, 7: 2 } — también funciona,
+        // pero Map es más semántico para este patrón id→estado.
+        const imgIndexes = new Map();
+
+        products.forEach((p) => {
+          const imgs = p.images.slice(0, 3);
+          imgIndexes.set(p.id, 0);
+
+          const card = grid.querySelector(`[data-product-id="${p.id}"]`);
+          const imgEl = card.querySelector(".product-img");
+
+          function goTo(idx) {
+            imgEl.style.opacity = "0";
+            setTimeout(() => {
+              imgEl.src = imgs[idx];
+              imgEl.style.opacity = "1";
+            }, 150); // espera 150ms (mientras la imagen es invisible) para cambiar el src
+            imgIndexes.set(p.id, idx);
+          }
+
+          card.querySelector(".img-btn-prev").addEventListener("click", (e) => {
+            e.stopPropagation(); // evita que el click llegue a la card y abra el modal
+            const cur = imgIndexes.get(p.id);
+
+            // El operador % (módulo) devuelve el resto de una división.
+            // Lo usamos para que el índice sea siempre circular (0→1→2→0…).
+            //
+            // Ir hacia adelante (next) es simple:
+            //   (cur + 1) % 3  →  0→1, 1→2, 2→0  ✓
+            //
+            // Ir hacia atrás (prev) tiene una trampa: en JS, (-1) % 3 = -1
+            // (no 2 como se esperaría). Para evitarlo sumamos imgs.length antes:
+            //   (cur - 1 + 3) % 3  →  0→2, 1→0, 2→1  ✓
+            goTo((cur - 1 + imgs.length) % imgs.length);
+          });
+
+          card.querySelector(".img-btn-next").addEventListener("click", (e) => {
+            e.stopPropagation();
+            const cur = imgIndexes.get(p.id);
+            goTo((cur + 1) % imgs.length);
+          });
+        });
+
+        // ── LISTENERS DE CLICK EN CARDS ───────────────────────────────────
+        document.querySelectorAll(".product-card").forEach((card) => {
+          card.addEventListener("click", (e) => {
+            if (e.target.closest(".img-btn")) return;
+            showModal(productsMap.get(parseInt(card.dataset.productId)));
+          });
+        });
+      }
+
+      // ── MODAL ───────────────────────────────────────────────────────────
+      function showModal(p) {
+        document.getElementById("modal-title").textContent = p.title;
+        document.getElementById("modal-body").innerHTML = `
+          <p class="text-body-secondary">${p.description}</p>
+          <hr>
+          <div class="row g-3">
+            <div class="col-6">
+              <small class="text-muted d-block">Precio</small>
+              <span class="fs-5 fw-bold text-success">$${p.price}</span>
+            </div>
+            <div class="col-6">
+              <small class="text-muted d-block">Valoración</small>
+              <span class="badge bg-warning text-dark fs-6">⭐ ${p.rating}</span>
+            </div>
+            <div class="col-6">
+              <small class="text-muted d-block">Stock</small>
+              <span>${p.stock} unidades</span>
+            </div>
+            <div class="col-6">
+              <small class="text-muted d-block">Categoría</small>
+              <span class="badge bg-secondary text-capitalize">${p.category}</span>
+            </div>
+            ${
+              p.brand
+                ? `
+            <div class="col-6">
+              <small class="text-muted d-block">Marca</small>
+              <span>${p.brand}</span>
+            </div>`
+                : ""
+            }
+          </div>
+        `;
+        modal.show();
+      }
+
+      loadProducts();
+    </script>
+  </body>
+</html>

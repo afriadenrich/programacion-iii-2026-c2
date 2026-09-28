@@ -100,3 +100,30 @@ Por definir - Última instancia para aprobarr la materia (máximo 4).
 - [Promesas](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 - [Usar Promesas](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Using_promises)
 - [Fetch](https://developer.mozilla.org/es/docs/Web/API/Window/fetch)
+
+## Clase 09 - Node y NPM - 18/09/2026
+
+## Clase 10 - Bootstrap - 25/09/2026
+
+### Bootstrap
+
+- [Bootstrap - Introducción](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
+- [Containers](https://getbootstrap.com/docs/5.3/layout/containers/)
+- [Sistema de Grid](https://getbootstrap.com/docs/5.3/layout/grid/)
+- [Navbar](https://getbootstrap.com/docs/5.3/components/navbar/)
+- [Offcanvas](https://getbootstrap.com/docs/5.3/components/offcanvas/)
+- [Cards](https://getbootstrap.com/docs/5.3/components/card/)
+- [Modal](https://getbootstrap.com/docs/5.3/components/modal/)
+- [Toasts](https://getbootstrap.com/docs/5.3/components/toasts/)
+- [Alerts](https://getbootstrap.com/docs/5.3/components/alerts/)
+- [Badge](https://getbootstrap.com/docs/5.3/components/badge/)
+- [List group](https://getbootstrap.com/docs/5.3/components/list-group/)
+- [Botones](https://getbootstrap.com/docs/5.3/components/buttons/)
+- [Formularios y validación](https://getbootstrap.com/docs/5.3/forms/validation/)
+- [Color modes (dark mode)](https://getbootstrap.com/docs/5.3/customize/color-modes/)
+- [Bootstrap Icons](https://icons.getbootstrap.com/)
+
+### Ejercicio guiado
+
+- Ejercicio guiado BCRA (consumo de la API del BCRA con Bootstrap) en `clase-10-bootstrap/ejercicio-guiado-bcra`
+- [API Estadísticas Monetarias v4 del BCRA](https://www.bcra.gob.ar/documentacion-apis/?fileName=estadisticas-monetarias-v4)

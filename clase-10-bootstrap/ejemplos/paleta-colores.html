@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paleta de colores — Bootstrap 5</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      /* ═══════════════════════════════════════════════════════════════
+         PASO 1 — Definir la paleta en :root
+
+         :root es el selector del elemento raíz del documento (<html>).
+         Las variables definidas acá son accesibles en CUALQUIER selector
+         del CSS usando var(--nombre-variable).
+
+         Nomenclatura recomendada: nombres SEMÁNTICOS (qué hace el color)
+         en vez de nombres de color (cómo se ve). Así, si el día de mañana
+         cambiás --color-primary de verde a rojo, nada se rompe porque el
+         nombre sigue describiendo su función, no su tono.
+
+         → Para crear tu propia paleta: cambiá solo los valores hex de
+           las 6 variables de abajo. El resto del archivo se adapta solo.
+         ═══════════════════════════════════════════════════════════════ */
+      :root {
+        /* Color que identifica la marca / acción principal */
+        --color-primary: #2d6a4f;
+
+        /* Variante más clara para fondos, badges, acentos secundarios */
+        --color-secondary: #74c69d;
+
+        /* Color de contraste: llamadas a la acción, detalles destacados */
+        --color-accent: #f4a261;
+
+        /* Fondo general de la página */
+        --color-bg: #f0f7f4;
+
+        /* Fondo de cards, modales y paneles */
+        --color-surface: #ffffff;
+
+        /* Texto principal */
+        --color-text: #1b2d23;
+
+        /* Texto secundario / subtítulos */
+        --color-muted: #52796f;
+      }
+
+      /* ═══════════════════════════════════════════════════════════════
+         PASO 2 — Usar las variables en tu propio CSS
+
+         var(--nombre) lee el valor de la variable.
+         Podés usarla en cualquier propiedad: color, background, border,
+         box-shadow, padding… donde sea que acepte un valor CSS.
+
+         Fallback: var(--color-primary, blue) → si la variable no existe
+         usa "blue" como valor de respaldo. Útil para debugging.
+         ═══════════════════════════════════════════════════════════════ */
+      body {
+        background-color: var(--color-bg);
+        color: var(--color-text);
+      }
+
+      .hero {
+        background-color: var(--color-primary);
+        color: #fff;
+        padding: 3rem 0;
+      }
+
+      .swatch {
+        height: 56px;
+        border-radius: 8px;
+        margin-bottom: 4px;
+      }
+
+      .accent-line {
+        height: 4px;
+        background-color: var(--color-accent);
+        border-radius: 4px;
+      }
+
+      /* ═══════════════════════════════════════════════════════════════
+         PASO 3 — Pisar las variables de Bootstrap
+
+         Bootstrap 5 define su propia paleta con el mismo mecanismo de
+         CSS variables. Al redefinirlas aquí en :root, las CLASES
+         UTILITARIAS de Bootstrap (bg-primary, text-primary, badge
+         bg-primary, border-primary…) toman automáticamente tus colores.
+
+         Variables de Bootstrap más usadas:
+           --bs-primary      → color principal (util classes)
+           --bs-body-bg      → fondo del <body>
+           --bs-body-color   → color del texto del <body>
+           --bs-link-color   → color de los <a>
+
+         OJO: no todos los componentes leen --bs-primary. Los botones
+         tienen sus propias variables de componente → ver PASO 4.
+         ═══════════════════════════════════════════════════════════════ */
+      :root {
+        --bs-primary: var(--color-primary);
+        --bs-body-bg: var(--color-bg);
+        --bs-body-color: var(--color-text);
+        --bs-link-color: var(--color-primary);
+      }
+
+      /* ═══════════════════════════════════════════════════════════════
+         PASO 4 — Botones: variables a nivel de componente
+
+         Bootstrap define el estilo de .btn-primary con sus propias
+         variables CSS DENTRO de la regla .btn-primary, con valores
+         hardcodeados al color azul por defecto. Por eso pisar
+         --bs-primary en :root NO cambia el botón.
+
+         Solución: redefinir esas variables apuntando al componente.
+         Cada componente de Bootstrap 5 tiene sus variables propias:
+
+           .btn-primary {
+             --bs-btn-bg            → fondo normal
+             --bs-btn-border-color  → borde normal
+             --bs-btn-hover-bg      → fondo al hacer hover
+             --bs-btn-active-bg     → fondo al hacer click
+           }
+
+         El mismo patrón aplica a .btn-outline-primary, .btn-danger, etc.
+         ═══════════════════════════════════════════════════════════════ */
+      .btn-primary {
+        --bs-btn-bg: var(--color-primary);
+        --bs-btn-border-color: var(--color-primary);
+        --bs-btn-hover-bg: #245a41;
+        --bs-btn-hover-border-color: #245a41;
+        --bs-btn-active-bg: #1e4d38;
+      }
+
+      .btn-outline-primary {
+        --bs-btn-color: var(--color-primary);
+        --bs-btn-border-color: var(--color-primary);
+        --bs-btn-hover-bg: var(--color-primary);
+        --bs-btn-hover-border-color: var(--color-primary);
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar bg-body-tertiary border-bottom px-4">
+      <a href="../index.html" class="btn btn-sm btn-outline-secondary"
+        >← Inicio</a
+      >
+      <span class="navbar-brand ms-3 mb-0">Paleta de colores</span>
+    </nav>
+
+    <!-- HERO: usa background-color: var(--color-primary) desde .hero -->
+    <section class="hero">
+      <div class="container">
+        <h1 class="fw-bold mb-2">Paleta de colores con CSS variables</h1>
+        <p class="mb-0" style="opacity: 0.8">
+          Cambiá los 7 valores hex en <code>:root</code> y toda la página se
+          actualiza sola.
+        </p>
+      </div>
+    </section>
+
+    <div class="container py-5">
+      <!-- ── PASO 1: mostrar la paleta visualmente ─────────────────── -->
+      <h4 class="fw-semibold mb-1">Paso 1 — Definir la paleta</h4>
+      <p style="color: var(--color-muted)" class="mb-4">
+        Cada rectángulo corresponde a una variable de <code>:root</code>. El
+        nombre describe su función, no su color.
+      </p>
+
+      <div class="row g-3 mb-5">
+        <div class="col-6 col-sm-4 col-lg-2">
+          <div class="swatch" style="background: var(--color-primary)"></div>
+          <code class="small d-block">--color-primary</code>
+          <small style="color: var(--color-muted)">#2d6a4f</small>
+        </div>
+        <div class="col-6 col-sm-4 col-lg-2">
+          <div class="swatch" style="background: var(--color-secondary)"></div>
+          <code class="small d-block">--color-secondary</code>
+          <small style="color: var(--color-muted)">#74c69d</small>
+        </div>
+        <div class="col-6 col-sm-4 col-lg-2">
+          <div class="swatch" style="background: var(--color-accent)"></div>
+          <code class="small d-block">--color-accent</code>
+          <small style="color: var(--color-muted)">#f4a261</small>
+        </div>
+        <div class="col-6 col-sm-4 col-lg-2">
+          <div class="swatch border" style="background: var(--color-bg)"></div>
+          <code class="small d-block">--color-bg</code>
+          <small style="color: var(--color-muted)">#f0f7f4</small>
+        </div>
+        <div class="col-6 col-sm-4 col-lg-2">
+          <div
+            class="swatch border"
+            style="background: var(--color-surface)"
+          ></div>
+          <code class="small d-block">--color-surface</code>
+          <small style="color: var(--color-muted)">#ffffff</small>
+        </div>
+        <div class="col-6 col-sm-4 col-lg-2">
+          <div class="swatch" style="background: var(--color-text)"></div>
+          <code class="small d-block">--color-text</code>
+          <small style="color: var(--color-muted)">#1b2d23</small>
+        </div>
+      </div>
+
+      <!-- ── PASO 2: elementos propios ─────────────────────────────── -->
+      <h4 class="fw-semibold mb-1">Paso 2 — En tu propio CSS</h4>
+      <p style="color: var(--color-muted)" class="mb-4">
+        Usás <code>var(--nombre)</code> en cualquier propiedad CSS. El hero de
+        arriba usa <code>background-color: var(--color-primary)</code>. El borde
+        del card de abajo usa <code>var(--color-accent)</code>.
+      </p>
+
+      <div
+        class="card mb-5 p-3"
+        style="
+          background: var(--color-surface);
+          border-left: 5px solid var(--color-accent);
+        "
+      >
+        <div class="accent-line mb-3"></div>
+        <p class="mb-0" style="color: var(--color-muted)">
+          Este card no usa ninguna clase de color de Bootstrap. Todo su estilo
+          viene de <code>var()</code> aplicado inline y en
+          <code>.accent-line</code>. Cambiá <code>--color-accent</code> en
+          <code>:root</code> y la barra naranja cambia de color.
+        </p>
+      </div>
+
+      <!-- ── PASO 3: utilities de Bootstrap ────────────────────────── -->
+      <h4 class="fw-semibold mb-1">Paso 3 — Bootstrap utilities</h4>
+      <p style="color: var(--color-muted)" class="mb-4">
+        Pisando <code>--bs-primary</code> en <code>:root</code>, las clases
+        utilitarias de Bootstrap toman tu color sin tocar ningún HTML.
+      </p>
+
+      <div class="d-flex flex-wrap gap-3 align-items-center mb-5">
+        <div class="bg-primary text-white rounded px-3 py-2 small">
+          <code>bg-primary</code>
+        </div>
+        <span class="text-primary fw-semibold">
+          <code>text-primary</code>
+        </span>
+        <span class="badge bg-primary fs-6">badge bg-primary</span>
+        <div class="border border-primary rounded px-3 py-2 small">
+          <code>border-primary</code>
+        </div>
+      </div>
+
+      <!-- ── PASO 4: botones ────────────────────────────────────────── -->
+      <h4 class="fw-semibold mb-1">Paso 4 — Botones</h4>
+      <p style="color: var(--color-muted)" class="mb-4">
+        Los botones requieren pisar sus variables de componente
+        (<code>--bs-btn-bg</code>, etc.) en la regla <code>.btn-primary</code>,
+        no en <code>:root</code>. <code>btn-secondary</code> no fue modificado —
+        mantiene el gris por defecto de Bootstrap.
+      </p>
+
+      <div class="d-flex flex-wrap gap-3 mb-5">
+        <button class="btn btn-primary">btn-primary</button>
+        <button class="btn btn-outline-primary">btn-outline-primary</button>
+        <button class="btn btn-secondary">btn-secondary (sin cambios)</button>
+      </div>
+
+      <!-- ── RESULTADO FINAL: página con la paleta completa ────────── -->
+      <hr class="mb-5" />
+      <h4 class="fw-semibold mb-1">Resultado — Todo junto</h4>
+      <p style="color: var(--color-muted)" class="mb-4">
+        Cards con badge, texto, botón y fondo: todos usan la paleta. Para
+        cambiar el look completo basta con editar 6 hex en <code>:root</code>.
+      </p>
+
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card h-100" style="background: var(--color-surface)">
+            <div class="card-body d-flex flex-column">
+              <span class="badge bg-primary mb-3" style="width: fit-content"
+                >Diseño</span
+              >
+              <h5 class="card-title">Tipografía responsiva</h5>
+              <p class="flex-grow-1" style="color: var(--color-muted)">
+                Cómo escalar tamaños de texto con clamp() y variables CSS.
+              </p>
+              <button class="btn btn-primary btn-sm w-100 mt-2">Ver más</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card h-100" style="background: var(--color-surface)">
+            <div class="card-body d-flex flex-column">
+              <span class="badge bg-primary mb-3" style="width: fit-content"
+                >Layout</span
+              >
+              <h5 class="card-title">CSS Grid avanzado</h5>
+              <p class="flex-grow-1" style="color: var(--color-muted)">
+                Layouts complejos sin frameworks usando grid-template-areas.
+              </p>
+              <button class="btn btn-outline-primary btn-sm w-100 mt-2">
+                Ver más
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div
+            class="card h-100"
+            style="background: var(--color-primary); color: #fff"
+          >
+            <div class="card-body d-flex flex-column">
+              <span
+                class="badge mb-3"
+                style="
+                  background: var(--color-accent);
+                  color: #000;
+                  width: fit-content;
+                "
+                >Destacado</span
+              >
+              <h5 class="card-title">Card con fondo primary</h5>
+              <p class="flex-grow-1" style="opacity: 0.8">
+                El fondo usa <code>var(--color-primary)</code> directamente como
+                inline style.
+              </p>
+              <button class="btn btn-light btn-sm w-100 mt-2">Ver más</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
