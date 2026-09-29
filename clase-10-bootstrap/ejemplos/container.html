@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Container — Bootstrap 5</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <style>
+      .demo-box {
+        background-color: #0d6efd;
+        color: white;
+        padding: 1rem 1.25rem;
+        font-weight: 500;
+        border-radius: 0.375rem;
+        margin-bottom: 0.5rem;
+      }
+      .demo-label {
+        font-family: monospace;
+        font-size: 1.1rem;
+      }
+      .demo-desc {
+        font-size: 0.8rem;
+        opacity: 0.85;
+      }
+      body {
+        background: #e9ecef;
+      }
+    </style>
+  </head>
+  <body class="py-4">
+
+    <div class="container mb-4">
+      <a href="../index.html" class="btn btn-sm btn-outline-secondary mb-4">← Inicio</a>
+      <h4 class="fw-bold mb-1">Tipos de Container</h4>
+      <p class="text-muted mb-0">
+        Redimensioná la ventana para ver cómo cambia el ancho máximo de cada container.
+        El fondo gris muestra el 100% del viewport; el azul muestra el ancho real del container.
+      </p>
+    </div>
+
+    <div class="container-fluid mb-3">
+      <div class="demo-box">
+        <div class="demo-label">container-fluid</div>
+        <div class="demo-desc">Siempre ocupa el 100% del ancho. Sin límite máximo en ningún breakpoint.</div>
+      </div>
+    </div>
+
+    <div class="container mb-3">
+      <div class="demo-box">
+        <div class="demo-label">container</div>
+        <div class="demo-desc">100% en xs. Ancho máximo fijo desde sm: 540px (sm) → 720px (md) → 960px (lg) → 1140px (xl) → 1320px (xxl).</div>
+      </div>
+    </div>
+
+    <div class="container-sm mb-3">
+      <div class="demo-box" style="background-color: #6610f2;">
+        <div class="demo-label">container-sm</div>
+        <div class="demo-desc">100% en xs (&lt;576px). Ancho fijo desde sm (≥576px).</div>
+      </div>
+    </div>
+
+    <div class="container-md mb-3">
+      <div class="demo-box" style="background-color: #198754;">
+        <div class="demo-label">container-md</div>
+        <div class="demo-desc">100% en xs y sm. Ancho fijo desde md (≥768px).</div>
+      </div>
+    </div>
+
+    <div class="container-lg mb-3">
+      <div class="demo-box" style="background-color: #dc3545;">
+        <div class="demo-label">container-lg</div>
+        <div class="demo-desc">100% en xs, sm y md. Ancho fijo desde lg (≥992px).</div>
+      </div>
+    </div>
+
+    <div class="container-xl mb-3">
+      <div class="demo-box" style="background-color: #d63384;">
+        <div class="demo-label">container-xl</div>
+        <div class="demo-desc">100% en xs, sm, md y lg. Ancho fijo desde xl (≥1200px).</div>
+      </div>
+    </div>
+
+    <div class="container-xxl mb-3">
+      <div class="demo-box" style="background-color: #fd7e14;">
+        <div class="demo-label">container-xxl</div>
+        <div class="demo-desc">100% en xs, sm, md, lg y xl. Ancho fijo desde xxl (≥1400px).</div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

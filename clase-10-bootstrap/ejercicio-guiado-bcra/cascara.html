@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tablero BCRA</title>
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap-icons/font/bootstrap-icons.css"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="#inicio">
+          <i class="bi bi-bank me-2"></i>Tablero BCRA
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#indicadores">Indicadores</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#graficos">Gráficos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#tasas">Tasas</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero: cotización del dólar -->
+    <header id="inicio" class="bg-primary text-white py-5">
+      <div class="container text-center">
+        <h1 class="display-5 fw-bold">El dólar hoy</h1>
+        <p class="lead mb-5">
+          Datos oficiales del Banco Central de la República Argentina
+        </p>
+
+        <div class="row g-4">
+          <div class="col-md-6">
+            <p class="mb-1">Minorista (promedio vendedor)</p>
+            <p class="display-3 fw-bold mb-0">
+              $ <span id="minorista-valor"></span>
+            </p>
+            <small>Actualizado: <span id="minorista-fecha"></span></small>
+          </div>
+          <div class="col-md-6">
+            <p class="mb-1">Mayorista de referencia</p>
+            <p class="display-3 fw-bold mb-0">
+              $ <span id="mayorista-valor"></span>
+            </p>
+            <small>Actualizado: <span id="mayorista-fecha"></span></small>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="container py-5">
+      <div id="error" class="alert alert-danger d-none" role="alert">
+        No se pudieron cargar los datos del BCRA. Probá de nuevo en unos
+        minutos.
+      </div>
+
+      <!-- Indicadores: las tarjetas las arma script.js -->
+      <section id="indicadores" class="mb-5">
+        <h2 class="mb-4">Indicadores principales</h2>
+        <div
+          id="indicadores-lista"
+          class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4"
+        ></div>
+      </section>
+
+      <!-- Gráficos -->
+      <section id="graficos" class="mb-5">
+        <h2 class="mb-4">Gráficos</h2>
+
+        <div class="row g-4">
+          <div class="col-lg-6">
+            <div class="card shadow-sm">
+              <div class="card-body">
+                <div
+                  class="d-flex justify-content-between align-items-center mb-3"
+                >
+                  <h5 class="card-title mb-0">
+                    Dólar mayorista, últimos 30 días
+                  </h5>
+                  <div class="btn-group btn-group-sm">
+                    <button
+                      id="dolar-linea"
+                      type="button"
+                      class="btn btn-outline-primary active"
+                    >
+                      Línea
+                    </button>
+                    <button
+                      id="dolar-barras"
+                      type="button"
+                      class="btn btn-outline-primary"
+                    >
+                      Barras
+                    </button>
+                  </div>
+                </div>
+                <canvas id="grafico-dolar"></canvas>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="card shadow-sm">
+              <div class="card-body">
+                <div
+                  class="d-flex justify-content-between align-items-center mb-3"
+                >
+                  <h5 class="card-title mb-0">
+                    Inflación mensual, últimos 12 meses (%)
+                  </h5>
+                  <div class="btn-group btn-group-sm">
+                    <button
+                      id="inflacion-linea"
+                      type="button"
+                      class="btn btn-outline-primary"
+                    >
+                      Línea
+                    </button>
+                    <button
+                      id="inflacion-barras"
+                      type="button"
+                      class="btn btn-outline-primary active"
+                    >
+                      Barras
+                    </button>
+                  </div>
+                </div>
+                <canvas id="grafico-inflacion"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tasas: las filas las arma script.js -->
+      <section id="tasas" class="mb-5">
+        <h2 class="mb-4">Tasas de interés</h2>
+
+        <div class="table-responsive">
+          <table class="table table-striped table-hover align-middle">
+            <thead class="table-dark">
+              <tr>
+                <th>Tasa</th>
+                <th class="text-end">Valor (nominal anual)</th>
+                <th class="text-end">Fecha</th>
+              </tr>
+            </thead>
+            <tbody id="tasas-cuerpo"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="bg-dark text-white-50 py-4">
+      <div class="container text-center">
+        Fuente:
+        <a class="link-light" href="https://www.bcra.gob.ar/apis-banco-central/"
+          >API de Estadísticas Monetarias del BCRA</a
+        >
+      </div>
+    </footer>
+
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="node_modules/chart.js/dist/chart.umd.js"></script>
+    <script src="clase.js"></script>
+  </body>
+</html>

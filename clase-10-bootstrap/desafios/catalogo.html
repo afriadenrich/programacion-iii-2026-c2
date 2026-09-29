@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catálogo — Bootstrap 5</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <style>
+      .product-card { cursor: pointer; transition: transform .15s, box-shadow .15s; }
+      .product-card:hover { transform: translateY(-3px); box-shadow: 0 .5rem 1rem rgba(0,0,0,.15) !important; }
+      .card-img-top { height: 180px; object-fit: cover; }
+    </style>
+  </head>
+  <body>
+
+    <nav class="navbar bg-body-tertiary border-bottom px-4">
+      <a href="../index.html" class="btn btn-sm btn-outline-secondary">← Inicio</a>
+      <span class="navbar-brand ms-3 mb-0">Catálogo de productos</span>
+    </nav>
+
+    <div class="container py-4">
+      <p class="text-muted mb-4">Hacé click en cualquier card para ver los detalles.</p>
+
+      <!-- ── GRILLA DE CARDS ──────────────────────────────────────────
+           Cada card tiene los datos del producto como atributos data-*.
+           El JS los lee con card.dataset y los pasa directo al modal,
+           sin necesidad de ningún objeto o array en JavaScript.
+           ─────────────────────────────────────────────────────────── -->
+      <div class="row g-4">
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="card h-100 product-card shadow-sm"
+               data-title="Essence Mascara Lash Princess"
+               data-category="beauty"
+               data-description="Popular mascara known for its volumizing and lengthening effects. Lash Princess formula."
+               data-price="9.99"
+               data-rating="4.9"
+               data-stock="5"
+               data-brand="Essence">
+            <img src="../img/placeholder.jpg"
+                 class="card-img-top" alt="Mascara">
+            <div class="card-body">
+              <span class="badge bg-secondary mb-2">beauty</span>
+              <h6 class="card-title">Essence Mascara</h6>
+              <span class="fw-bold text-success">$9.99</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="card h-100 product-card shadow-sm"
+               data-title="Eyeshadow Palette with Mirror"
+               data-category="beauty"
+               data-description="Versatile eyeshadow palette with a built-in mirror, featuring a range of shades for any look."
+               data-price="19.99"
+               data-rating="4.4"
+               data-stock="44"
+               data-brand="Glamour Beauty">
+            <img src="../img/placeholder.jpg"
+                 class="card-img-top" alt="Eyeshadow">
+            <div class="card-body">
+              <span class="badge bg-secondary mb-2">beauty</span>
+              <h6 class="card-title">Eyeshadow Palette</h6>
+              <span class="fw-bold text-success">$19.99</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="card h-100 product-card shadow-sm"
+               data-title="Gucci Bloom Eau de Parfum"
+               data-category="fragrances"
+               data-description="Floral and captivating fragrance with jasmine and tuberose notes. Long lasting scent."
+               data-price="79.99"
+               data-rating="4.1"
+               data-stock="93"
+               data-brand="Gucci">
+            <img src="../img/placeholder.jpg"
+                 class="card-img-top" alt="Perfume">
+            <div class="card-body">
+              <span class="badge bg-secondary mb-2">fragrances</span>
+              <h6 class="card-title">Gucci Bloom</h6>
+              <span class="fw-bold text-success">$79.99</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="card h-100 product-card shadow-sm"
+               data-title="Annibale Colombo Bed"
+               data-category="furniture"
+               data-description="Luxurious Italian-designed bed frame crafted with premium materials and timeless elegance."
+               data-price="1899.99"
+               data-rating="4.0"
+               data-stock="47"
+               data-brand="Annibale Colombo">
+            <img src="../img/placeholder.jpg"
+                 class="card-img-top" alt="Cama">
+            <div class="card-body">
+              <span class="badge bg-secondary mb-2">furniture</span>
+              <h6 class="card-title">Annibale Bed</h6>
+              <span class="fw-bold text-success">$1899.99</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- ── MODAL ─────────────────────────────────────────────────────── -->
+    <div class="modal fade" id="productModal" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modal-title"></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body" id="modal-body"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button type="button" class="btn btn-primary">Agregar al carrito</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      const modal = new bootstrap.Modal(document.getElementById('productModal'))
+
+      document.querySelectorAll('.product-card').forEach(card => {
+        card.addEventListener('click', () => {
+          const d = card.dataset  // todos los data-* de la card
+
+          document.getElementById('modal-title').textContent = d.title
+          document.getElementById('modal-body').innerHTML = `
+            <p class="text-body-secondary">${d.description}</p>
+            <hr>
+            <div class="row g-3">
+              <div class="col-6">
+                <small class="text-muted d-block">Precio</small>
+                <span class="fs-5 fw-bold text-success">$${d.price}</span>
+              </div>
+              <div class="col-6">
+                <small class="text-muted d-block">Valoración</small>
+                <span class="badge bg-warning text-dark fs-6">⭐ ${d.rating}</span>
+              </div>
+              <div class="col-6">
+                <small class="text-muted d-block">Stock</small>
+                <span>${d.stock} unidades</span>
+              </div>
+              <div class="col-6">
+                <small class="text-muted d-block">Categoría</small>
+                <span class="badge bg-secondary text-capitalize">${d.category}</span>
+              </div>
+              <div class="col-6">
+                <small class="text-muted d-block">Marca</small>
+                <span>${d.brand}</span>
+              </div>
+            </div>
+          `
+          modal.show()
+        })
+      })
+    </script>
+  </body>
+</html>
