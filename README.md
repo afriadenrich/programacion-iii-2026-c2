@@ -103,6 +103,18 @@ Por definir - Última instancia para aprobarr la materia (máximo 4).
 
 ## Clase 09 - Node y NPM - 18/09/2026
 
+### Paquetes con NPM
+
+- [Common JS vs ES Modules (y otros)](https://lenguajejs.com/nodejs/fundamentos/commonjs-vs-esm/)
+- [Node](https://nodejs.org/es)
+- [Node descargar](https://nodejs.org/es/download)
+- [NPM](https://www.npmjs.com/)
+- [SweetAlert2](https://sweetalert2.github.io/)
+- [Toastify](https://apvarun.github.io/toastify-js/)
+- [JsPDF](https://www.npmjs.com/package/jspdf)
+- [XLSX](https://www.npmjs.com/package/xlsx)
+- [ChartsJS](https://www.npmjs.com/package/chart.js)
+
 ## Clase 10 - Bootstrap - 25/09/2026
 
 ### Bootstrap

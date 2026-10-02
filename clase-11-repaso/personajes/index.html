@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personajes</title>
+    <!-- ESTILOS -->
+    <!-- PRIMERO BOOTSTRAP-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <!-- DESPUÉS LO MÍO -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Personajes</h1>
+      <div class="row">
+        <section class="col-12 col-md-6">
+          <table class="table table-striped">
+            <thead>
+              <tr class="table-primary">
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>URL</th>
+              </tr>
+            </thead>
+
+            <tbody id="tbody"></tbody>
+          </table>
+          <div>
+            <button id="anterior">Anterior</button>
+            <button id="siguiente">Siguiente</button>
+          </div>
+        </section>
+
+        <section id="ficha" class="col-12 col-md-6"></section>
+      </div>
+    </main>
+    <script src="main.js"></script>
+  </body>
+</html>
