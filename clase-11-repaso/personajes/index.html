@@ -12,14 +12,26 @@
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
     <!-- DESPUÉS LO MÍO -->
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <main class="container">
       <h1>Personajes</h1>
+
       <div class="row">
         <section class="col-12 col-md-6">
+          <div class="input-group mb-3">
+            <input class="form-control" id="busqueda-input" />
+            <button class="input-group-text" id="busqueda-btn">
+              <i class="bi bi-search"></i>
+            </button>
+          </div>
+
           <table class="table table-striped">
             <thead>
               <tr class="table-primary">
@@ -34,6 +46,11 @@
           <div>
             <button id="anterior">Anterior</button>
             <button id="siguiente">Siguiente</button>
+          </div>
+          <div>
+            <button onclick="ordenarPorNombre()">Ordenar por nombre</button>
+            <button onclick="ordenarPorId()">Ordenar por ID</button>
+            <button onclick="ordenarPorId(-1)">Ordenar por ID desc</button>
           </div>
         </section>
 

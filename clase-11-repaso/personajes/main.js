@@ -2,12 +2,17 @@ const tbody = document.getElementById("tbody");
 const anterior = document.getElementById("anterior");
 const siguiente = document.getElementById("siguiente");
 const ficha = document.getElementById("ficha");
+/** @type {HTMLInputElement} */
+const busquedaInput = document.getElementById("busqueda-input");
+const busquedaBtn = document.getElementById("busqueda-btn");
 
 const API_URL = "https://swapi.tech/api";
 
 let previous = null;
 
 let next = null;
+
+let arrPersonajes = [];
 
 // 3. Quiero que lo que trae la api reemplaze a lo anterior
 
@@ -28,6 +33,17 @@ siguiente.onclick = () => {
   mostrarPersonajes(next);
 };
 
+busquedaBtn.addEventListener("click", () => {
+  const busqueda = busquedaInput.value;
+  const url = API_URL + "/people" + "?name=" + busqueda;
+
+  const queryParams = new URLSearchParams();
+  queryParams.append("name", busqueda);
+  const urlAlternativa = `${API_URL}/people?${queryParams.toString()}`;
+
+  mostrarPersonajes(url);
+});
+
 // FUNCIONES EXTRA
 
 async function mostrarPersonajes(ruta) {
@@ -39,12 +55,22 @@ async function mostrarPersonajes(ruta) {
   previous = json.previous;
   next = json.next;
 
-  tbody.replaceChildren(); // reemplazar el contenido con nada
+  // reemplazar el contenido con nada
   /**
    * @type { {uid: string, name: string, url: string}[] }
+   * @type { {uid: string, properties: {name: string, url: string}}[] }
    */
-  const arrPersonajes = json.results;
+  arrPersonajes = json.result || json.results;
 
+  // if(busquedaInput.value){
+  //   arrPersonajes.filter()
+  // }
+
+  mostrarArray();
+}
+
+function mostrarArray() {
+  tbody.replaceChildren();
   arrPersonajes.forEach((pj) => {
     const tr = document.createElement("tr");
 
@@ -52,7 +78,8 @@ async function mostrarPersonajes(ruta) {
     idEl.textContent = pj.uid;
 
     const nombreEl = document.createElement("td");
-    nombreEl.textContent = pj.name;
+
+    nombreEl.textContent = pj.name || pj.properties.name;
 
     const urlEl = document.createElement("td");
     const fichaBtn = document.createElement("button");
@@ -65,6 +92,31 @@ async function mostrarPersonajes(ruta) {
     tr.append(idEl, nombreEl, urlEl);
     tbody.appendChild(tr);
   });
+}
+
+function ordenarPorNombre() {
+  arrPersonajes.sort((a, b) => {
+    /** @type {string} */
+    const nombreA = a.name || a.properties.name;
+    /** @type {string} */
+    const nombreB = b.name || b.properties.name;
+
+    const comparacion = nombreA.localeCompare(nombreB);
+
+    console.log(nombreA, nombreB, comparacion);
+
+    return comparacion;
+  });
+
+  mostrarArray();
+}
+
+function ordenarPorId(ascendente = 1) {
+  arrPersonajes.sort((a, b) => {
+    return a.uid * ascendente - b.uid;
+  });
+
+  mostrarArray();
 }
 
 async function verFicha(id) {
@@ -120,6 +172,7 @@ function mostrarSpinner(elemento) {
     </tr>`,
   );
 }
+
 function mostrarSkeleton(elemento) {
   elemento.replaceChildren();
 
@@ -128,17 +181,29 @@ function mostrarSkeleton(elemento) {
     `<div class="card" aria-hidden="true">
   <div class="card-body">
         <h5 class=" placeholder-glow card-title">${name}</h5>
-      </div>
-      <ul class=" placeholder-glow list-group list-group-flush">
-        <li class="list-group-item placeholder" ><span ></span></li>
-        <li class="list-group-item placeholder" ><span ></span></li>
-        <li class="list-group-item placeholder" ><span ></span></li>
-        <li class="list-group-item placeholder" ><span ></span></li>
-        <li class="list-group-item placeholder" ><span ></span></li>        
-        <li class="list-group-item placeholder" ><span ></span></li>        
-        <li class="list-group-item placeholder" ><span ></span></li>      
-        </ul>
-  </div>
+        <p class="card-text placeholder-glow">
+          <span class="placeholder col-12 placeholder-lg" ></span>
+        </p>
+        <p class="card-text placeholder-glow">
+          <span class="placeholder col-12 placeholder-lg" ></span>
+        </p>
+        <p class="card-text placeholder-glow">
+          <span class="placeholder col-12 placeholder-lg" ></span>
+        </p>
+        <p class="card-text placeholder-glow">
+          <span class="placeholder col-12 placeholder-lg" ></span>
+        </p>
+        <p class="card-text placeholder-glow">
+          <span class="placeholder col-12 placeholder-lg" ></span>
+        </p>
+        <p class="card-text placeholder-glow">
+          <span class="placeholder col-12 placeholder-lg" ></span>
+        </p>
+        <p class="card-text placeholder-glow">
+          <span class="placeholder col-12 placeholder-lg" ></span>
+        </p>
+        </div>
+        </div>
 </div>`,
   );
 }
