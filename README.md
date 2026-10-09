@@ -139,3 +139,11 @@ Por definir - Última instancia para aprobarr la materia (máximo 4).
 
 - Ejercicio guiado BCRA (consumo de la API del BCRA con Bootstrap) en `clase-10-bootstrap/ejercicio-guiado-bcra`
 - [API Estadísticas Monetarias v4 del BCRA](https://www.bcra.gob.ar/documentacion-apis/?fileName=estadisticas-monetarias-v4)
+
+## Modelo de parcial - 28/09/2026
+
+## Clase 11 - Repaso - 02/10/2026
+
+## Primer Parcial - 05/10/2026
+
+## Clase 12 - Express - 09/10/2026
