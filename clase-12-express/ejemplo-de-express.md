@@ -1,3 +1,6 @@
+ARRANCAR EL SERVER CON: node --watch .\main.js 
+
+
 # Ejemplo de express
 
 - Common JS, NO Ecmascripts

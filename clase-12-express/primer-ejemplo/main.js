@@ -16,6 +16,26 @@ app.get("/puestos", (peticion, respuesta) => {
   respuesta.send(puestosDeTrabajoFiltrados(limit, page));
 });
 
+app.get("/puestos/:nombre", (req, res) => {
+  const nombreBuscado = req.params.nombre.toLowerCase();
+
+  const puestoEncontrado = puestosDeTrabajo.find((puesto) => {
+    const nombrePuesto = puesto.nombre.toLowerCase();
+
+    return nombrePuesto.includes(nombreBuscado);
+  });
+
+  if (puestoEncontrado) {
+    res.json(puestoEncontrado);
+  } else {
+    res.status(404).json({
+      error:
+        "No se encontró ningún puesto de trabajo con el nombre " +
+        nombreBuscado,
+    });
+  }
+});
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
