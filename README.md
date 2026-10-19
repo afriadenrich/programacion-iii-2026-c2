@@ -9,17 +9,17 @@ Va a ser una versión más extensa del parcial para que practiquen y tengan cód
 
 # Fechas Importantes
 
-Por definir - Simulacro Parcial
-Por definir - Primer Parcial
-Por definir - Segundo Parcial
-Por definir - Entrega TP
+28/09 - Simulacro Parcial
+05/10 - Primer Parcial
+20/11 - Segundo Parcial
+27/11 - Entrega TP
 
-Por definir - Recuperatorio Primer Parcial
-Por definir - Recuperatorio Segundo Parcial
-Por definir - Recuperatorio TP
+30/11 - Recuperatorio Primer Parcial
+04/12 - Recuperatorio Segundo Parcial
+30/11 / 04/12 - Recuperatorio TP
 
-Por definir - Última instancia para promocionar la materia
-Por definir - Última instancia para aprobarr la materia (máximo 4).
+04/12 - Última instancia para promocionar la materia
+11/12 - Última instancia para aprobarr la materia (máximo 4).
 
 
 # Clases
