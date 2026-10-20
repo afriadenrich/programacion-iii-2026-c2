@@ -23,12 +23,19 @@ const Estudiante = sequelize.define(
       type: DataTypes.INTEGER,
       unique: true,
     },
-    historialCrediticio: {
-      type: DataTypes.INTEGER,
-    },
+    // eliminado: {
+    //   type: DataTypes.BOOLEAN, // 1, 0, null
+    // },
+    // fechaDeEliminación: {
+    //   type: DataTypes.DATE, // Fecha (true), null (false)
+    // },
   },
   {
     tableName: "estudiantes",
+    timestamps: true,
+    // createdAt: "creadoEn",
+    // updatedAt: "modificadoEn", // false
+    paranoid: true,
   },
 );
 
