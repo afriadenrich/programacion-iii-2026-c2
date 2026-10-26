@@ -1,5 +1,11 @@
 const { Curso, Profesor } = require("../database/relaciones");
 
+async function crear(req, res, next) {
+  const curso = await Curso.create(req.body);
+
+  res.json(curso);
+}
+
 async function traerTodos(req, res) {
   const cursos = await Curso.findAll({ include: Profesor });
 
@@ -12,12 +18,6 @@ async function traerPorId(req, res) {
   const profesor = await curso.getProfesor();
 
   res.json({ curso, profesor });
-}
-
-async function crear(req, res) {
-  const curso = await Curso.create(req.body);
-
-  res.json(curso);
 }
 
 module.exports = { traerTodos, traerPorId, crear };

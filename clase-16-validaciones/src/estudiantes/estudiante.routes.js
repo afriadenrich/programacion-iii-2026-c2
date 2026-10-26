@@ -7,6 +7,7 @@ const {
   traerEstPorId,
   crearEstCurso,
 } = require("./estudiante.controller");
+const { validarID } = require("../common/middlewares");
 
 const estRouter = express.Router();
 
@@ -16,10 +17,10 @@ estRouter.post("/", crearEst);
 
 estRouter.post("/curso", crearEstCurso);
 
-estRouter.get("/:id", traerEstPorId);
+estRouter.get("/:id", validarID, traerEstPorId);
 
-estRouter.put("/:id", modificarEstPorId);
+estRouter.put("/:id", validarID, modificarEstPorId);
 
-estRouter.delete("/:id", eliminarEstPorId);
+estRouter.delete("/:id", validarID, eliminarEstPorId);
 
 module.exports = estRouter;

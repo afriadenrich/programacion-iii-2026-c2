@@ -34,7 +34,7 @@ async function syncMuchos() {
   await sequelize.sync({ alter: true });
 }
 
-syncMuchos();
+// syncMuchos();
 
 module.exports = {
   Curso,
