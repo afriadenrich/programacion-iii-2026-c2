@@ -17,4 +17,19 @@ const getPersonajes = async (req, res) => {
   });
 };
 
-module.exports = { getPersonajes };
+/**
+ *
+ * @param {*} req
+ * @param {import("express").Response} res
+ */
+const postPersonajes = async (req, res) => {
+  console.log(req.body);
+  console.log("Guardo el personaje");
+  res.redirect("/personajes");
+};
+
+const formPersonajes = async (req, res) => {
+  res.render("personajes/formulario");
+};
+
+module.exports = { getPersonajes, postPersonajes, formPersonajes };
