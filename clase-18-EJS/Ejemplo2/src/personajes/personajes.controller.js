@@ -1,6 +1,19 @@
-const getPersonajes = (req, res) => {
+const { traerPersonajes } = require("./personajes.service");
+const ejs = require("ejs");
+
+/**
+ *
+ * @param {*} req
+ * @param {import("express").Response} res
+ */
+const getPersonajes = async (req, res) => {
+  const { arrPersonajes, previous, next } = await traerPersonajes();
+
   res.render("personajes/listado", {
-    arrayPersonajes: [{ nombre: "agus" }, { nombre: "nico" }],
+    arrayPersonajes: arrPersonajes,
+    previous: previous,
+    next: next,
+    cache: true,
   });
 };
 
